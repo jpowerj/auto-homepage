@@ -1,1 +1,1 @@
-Sitemap: https://jpj.georgetown.domains/sitemap.xml
+Sitemap: https://jjacobs.me/auto-homepage/sitemap.xml
