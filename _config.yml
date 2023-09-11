@@ -29,6 +29,7 @@ github_username:  github_username
 
 # Build settings
 #theme: minima
+destination: docs
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
