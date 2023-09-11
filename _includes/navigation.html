@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <!--<span class="d-block d-lg-none">Jeff Jacobs</span>-->
+            <div>
+                <span class="d-none d-lg-block mb-3">{{ site.data.about.given_name }} {{ site.data.about.family_name }}</span>
+                <span class="d-none d-lg-block">
+                    <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ site.baseurl }}/assets/img/profile.jpg" alt="">
+                </span>
+            </div>
+        </a>
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-2 ms-lg-0 me-auto">
+                {% for item in site.data.navigation %}
+                <li class="nav-item">
+                    {% if item.anchor %}
+                        <a class="nav-link js-scroll-trigger" href="#{{ item.anchor }}">{{ item.name }}</a>
+                    {% else %}
+                        <a class="nav-link" href="{{ item.href }}" target="_blank" rel="noopener noreferrer">{{ item.name }} <i class="fa fa-external-link"></i></a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="social-icons d-lg-block d-none">
+            <a href="mailto:{{ site.data.about.email }}" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://github.com/{{ site.data.about.github_username }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="{{ site.data.about.scholar_url }}" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-google"></i>
+            </a>
+        </div>
+</nav>

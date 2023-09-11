@@ -1,0 +1,26 @@
+- employer: "Employer #1"
+  loc: "[City], [State], [Country]"
+  position: "Position 1"
+  start_date: "[Month] [Year]"
+  end_date: "[Month] [Year]"
+  bullets:
+    - "Describe your contribution(s) here. You can use \\LaTeX\\ code here, so long as you make sure to use \\textbf{double backslashes} to denote LaTeX commands, like: $N > \\textrm{80K}$. You can also use the \\texttt{texttt} command to make fixed-width formatted text: \\texttt{pandas}, \\texttt{statsmodels}, \\texttt{bokeh}."
+    - "Second bullet, using \\texttt{textit}: \\textit{Working for Respect: Community and Conflict at Walmart} (Reich and Bearman)"
+  bullets_html:
+    - "Describe your contribution(s) here. You can use \\( \\LaTeX \\) code here, so long as you make sure to use the delimiters <span class=\"code\">\\(</span> and <span class=\"code\">\\)</span> to enclose commands, like: \\( N > \\textrm{80K} \\). You can also use the CSS class <span class=\"code\">code</span> to make fixed-width formatted text: <span class='code'>pandas</span>, <span class='code'>tidyverse</span>."
+- employer: "Employer #2"
+  loc: "[City], [State], [Country]"
+  position: "Position 2"
+  start_date: "[Month] [Year]"
+  end_date: "[Month] [Year]"
+  bullets:
+    - "First contribution."
+    - "Second contribution."
+- employer: "Employer #3"
+  loc: "[City], [State], [Country]"
+  position: "Position 3"
+  start_date: "[Month] [Year]"
+  end_date: "[Month] [Year]"
+  bullets:
+    - "First contribution."
+    - "Second contribution."

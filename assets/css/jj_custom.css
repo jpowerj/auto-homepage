@@ -1,0 +1,114 @@
+/*
+.book-title {
+    font-style: italic;
+}
+*/
+
+.accordion-button:not(.collapsed)>#expand-text:after {
+    content: '(Click to collapse)';
+}
+
+.accordion-button.collapsed>#expand-text:after {
+    content: '(Click to expand)';
+}
+
+.bg-primary-opaque {
+    background-color: rgba(189, 93, 56, 0.5);
+}
+
+.bg-primary-very-opaque {
+    background-color: rgba(189, 93, 56, 0.2);
+}
+
+.bg-primary-very-opaque-hover:hover {
+    background: rgba(189, 93, 56, 0.5) !important;
+}
+
+.bigger-text {
+    font-size: 1.30rem;
+}
+
+.bold-text {
+    font-weight: 600;
+}
+
+.bolder-text {
+    font-weight: 800;
+}
+
+.code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffe7e0;
+}
+
+.course-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-name {
+    font-size: 1.5rem;
+}
+
+.fg-primary-opaque {
+    /* color: rgba(189, 93, 56, 0.5); */
+    --bs-accordion-bg: rgba(189, 93, 56, 0.2) !important;
+    --bs-accordion-btn-bg: rgba(189, 93, 56, 0.2) !important;
+    --bs-accordion-btn-color: black !important;
+    --bs-accordion-active-bg: rgba(189, 93, 56, 0.2) !important;
+    --bs-accordion-active-color: black !important;
+}
+
+.hover-highlight:hover>div {
+    background-color: rgba(189, 93, 56, 0.5) !important;
+}
+
+.jj-accordion {
+    --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.jj-accordion-content {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.jj-accordion-button.collapsed::after {
+    --bs-accordion-icon-color: black !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.jj-accordion-button:not(.collapsed)::after {
+    --bs-accordion-icon-color: black !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+
+p.lead-smaller {
+    font-size: 1.12rem;
+    font-weight: 400;
+}
+
+#sideNav {
+    overflow-y: scroll;
+}
+
+.slightly-opaque {
+    opacity: 0.5;
+}
+
+/*
+.expand-text:after {
+    content: '(Click to collapse)';
+}
+*/

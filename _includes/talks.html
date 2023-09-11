@@ -1,0 +1,50 @@
+<!-- Talks -->
+
+<!-- <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="talks"> -->
+    <!-- <div class="my-auto"> -->
+        <!-- <h2 class="mb-5">Talks</h2> -->
+        {% for talk in site.data.talks %}
+        {% if forloop.last %}
+            {% assign div_mb = 5 %}
+        {% else %}
+            {% assign div_mb = 3 %}
+        {% endif %}
+        <div class="resume-item d-flex flex-column col-md-12 mb-{{ div_mb }} bg-primary-very-opaque">
+            <div class="resume-content-header d-flex flex-md-row">
+                <h4 class="mb-0 flex-grow-1">
+                    {% if talk.title_web %}
+                        {{ talk.title_web }}
+                    {% else %}
+                        {{ talk.title }}
+                    {% endif %}
+                </h4>
+                <div class="resume-date text-md-end align-self-center">
+                    <span class="text-dark">{{ talk.date }}</span>
+                </div>
+            </div>
+            <div class="resume-content">
+                {% if talk.coauths %}
+                  <p class="mb-0 text-dark">{{ talk.coauths }}</p>
+                {% endif %}
+                <p class="mb-0 text-dark"><span class="font-italic">
+                    {% if talk.host_web %}
+                        {{ talk.host_web }}
+                    {% else %}
+                        {{ talk.host }}
+                    {% endif %}
+                </span></p>
+                <p class="mb-1 text-dark">
+                    {% if talk.loc_web %}
+                        {{ talk.loc_web }}
+                    {% else %}
+                        {{ talk.loc }}
+                    {% endif %}
+                </p>
+                <p class="mb-0"><a href="{{ talk.link }}"
+                        class="paper-link" title="PDF" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-file-pdf fa-2x"></i></a></p>
+            </div>
+        </div>
+        {% endfor %}
+    <!-- </div>
+</section> -->

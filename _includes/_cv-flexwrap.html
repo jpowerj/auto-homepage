@@ -1,0 +1,219 @@
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="cv">
+    <div class="my-auto">
+
+        <h2 class="mb-3">CV / Resume</h2>
+
+        <p class="lead text-dark bg-primary-very-opaque p-3">
+            You can download a PDF version of my 
+            <span class="bold-text">CV <a href="./{{ site.data.about.family_name }}_CV_2023-09-10.pdf" target="_blank" rel="noopener noreferrer">here</a></span>
+            (Last updated <span class="bold-text">September 10, 2023</span>)
+        </p>
+
+        <!-- Education -->
+
+        <h3 class="mb-1">Education</h3>
+        <p class="lead text-dark mb-3">
+            {% for school in site.data.education.schools %}
+                {% if forloop.last %}
+                    {% assign div_mb = 5 %}
+                {% else %}
+                    {% assign div_mb = 3 %}
+                {% endif %}
+                <div class="resume-item d-flex flex-column col-md-12 mb-{{ div_mb }} bg-primary-very-opaque">
+                    <div class="resume-content-header d-flex flex-md-row mb-1">
+                        <h4 class="mb-0 flex-grow-1">
+                                {{ school.name }}
+                        </h4>
+                        <div class="resume-date text-md-end align-self-center">
+                            <span class="text-dark">{{ school.loc }}</span>
+                        </div>
+                    </div>
+                    <div class="resume-content">
+                    {% for degree in school.degrees %}
+                        <div class="resume-content d-flex flex-md-row">
+                            <span class="mb-0 text-dark flex-grow-1"><i>{{ degree.name }}</i></span>
+                            <div class="resume-date text-md-end align-self-center">
+                                <span class="text-dark">{{ degree.date }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </p>
+
+        <!-- Employment -->
+        
+        <h3 class="mb-1">Employment</h3>
+        <p class="lead text-dark mb-3">
+            {% for job in site.data.employment %}
+                {% if forloop.last %}
+                    {% assign div_mb = 5 %}
+                {% else %}
+                    {% assign div_mb = 3 %}
+                {% endif %}
+                <div class="resume-item d-flex flex-column col-md-12 mb-{{ div_mb }} bg-primary-very-opaque">
+                    <div class="resume-content-header d-flex flex-md-row mb-1">
+                        <h4 class="mb-0 flex-grow-1">
+                                {{ job.employer }}
+                        </h4>
+                        <div class="resume-date text-md-end align-self-center">
+                            <span class="text-dark">{{ job.loc }}</span>
+                        </div>
+                    </div>
+                    <div class="resume-content d-flex flex-md-row">
+                        <span class="mb-1 text-dark flex-grow-1"><i>{{ job.position }}</i></span>
+                        <div class="resume-date text-md-end align-self-center">
+                            <span class="text-dark">{{ job.start_date }} - {{ job.end_date }}</span>
+                        </div>
+                    </div>
+                    
+                    {% if site.data.cvconfig.include_job_bullets and job.bullets %}
+                        <div class="resume-content d-flex flex-md-row">
+                            <ul>
+                            {% if job.bullets_html %}
+                                {% for bullet in job.bullets_html %}
+                                    <li class="text-dark"><span class="mb-0 text-dark flex-grow-1">{{ bullet }}</span></li>
+                                {% endfor %}
+                            {% else %}
+                                {% for bullet in job.bullets %}
+                                    <li class="text-dark"><span class="mb-0 text-dark flex-grow-1">{{ bullet }}</span></li>
+                                {% endfor %}
+                            {% endif %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </p>
+
+        <!-- Awards -->
+
+        <h3 class="mb-1">Awards and Achievements</h3>
+        <p class="lead text-dark mb-3">
+            {% for award in site.data.awards %}
+                {% if forloop.last %}
+                    {% assign div_mb = 5 %}
+                {% else %}
+                    {% assign div_mb = 3 %}
+                {% endif %}
+                <div class="resume-item d-flex flex-column col-md-12 mb-{{ div_mb }} bg-primary-very-opaque">
+                    <div class="resume-content-header d-flex flex-md-row mb-1">
+                        <h4 class="mb-0 flex-grow-1">
+                                {{ award.name }}
+                        </h4>
+                        <div class="resume-date text-md-end align-self-center">
+                            <span class="text-dark">{{ award.date }}</span>
+                        </div>
+                    </div>
+                    <div class="resume-content">
+                        <div class="resume-content d-flex flex-md-row">
+                        <span class="mb-0 text-dark flex-grow-1">{{ award.description }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </p>
+
+        <!-- Skills -->
+
+        <h3 class="mb-1">Skills</h3>
+        <p class="lead text-dark mb-3">
+            <div class="resume-item d-flex flex-column col-md-12 mb-3 bg-primary-very-opaque">
+                <div class="resume-content-header d-flex flex-md-row mb-1">
+                    <h4 class="mb-0 flex-grow-1">
+                        Programming Languages
+                    </h4>
+                </div>
+                <div class="resume-content">
+                    <div class="resume-content d-flex flex-md-row">
+                        <ul>
+                        {% for lang in site.data.skills.languages %}
+                            <li class="text-dark"><span class="mb-0 text-dark flex-grow-1">{{ lang }}</span></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% for framework in site.data.skills.frameworks %}
+                {% if forloop.last %}
+                    {% assign div_mb = 5 %}
+                {% else %}
+                    {% assign div_mb = 3 %}
+                {% endif %}
+                <div class="resume-item d-flex flex-column col-md-12 mb-{{ div_mb }} bg-primary-very-opaque">
+                    <div class="resume-content-header d-flex flex-md-row mb-1">
+                        <h4 class="mb-0 flex-grow-1">
+                            {{ framework.category }}
+                        </h4>
+                    </div>
+                    <div class="resume-content">
+                        <div class="resume-content d-flex flex-md-row">
+                            <ul>
+                            {% for entry in framework.entries %}
+                                <li class="text-dark"><span class="mb-0 text-dark flex-grow-1">{{ entry }}</span></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </p>
+
+        <!-- References -->
+
+        <h3 class="mb-1">References</h3>
+        <p class="lead text-dark mb-3">
+            <div class="d-flex flex-row flex-wrap gap-1 col-md-12 justify-content-between">
+                {% for ref in site.data.references %}
+                    {% capture index_mod_2 %}{{ forloop.index0 | modulo: 2 }}{% endcapture %}
+                    {% if index_mod_2 == "0" %}
+                        <div class="resume-item d-flex flex-column col-md-6 mb-3 bg-primary-very-opaque" style="margin-left: 0rem !important; margin-right: 1rem !important;">
+                            <div class="resume-content">
+                                <div class="resume-content d-flex flex-md-row">
+                                    <span class="mb-0 text-dark flex-grow-1"><b>{{ ref.name }} aand {{ has_next_ref }}</b></span>
+                                </div>
+                                <div class="resume-content d-flex flex-md-row">
+                                    <span class="mb-0 text-dark flex-grow-1"><i>{{ ref.title }}</i></span>
+                                </div>
+                                <div class="resume-content d-flex flex-md-row">
+                                    <span class="mb-0 text-dark flex-grow-1">{{ ref.institute }}</span>
+                                </div>
+                                <div class="resume-content d-flex flex-md-row">
+                                    <span class="mb-0 text-dark flex-grow-1">{{ ref.loc }}</span>
+                                </div>
+                                <div class="resume-content d-flex flex-md-row">
+                                    <a href="mailto:{{ ref.email }}" target="_blank"><span class="mb-0 text-dark flex-grow-1">{{ ref.email }}</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        {% unless forloop.index == forloop.length %}
+                            {% assign next_ref = site.data.references[forloop.index] %}
+                            <div class="resume-item d-flex flex-column col-md-6 mb-3 bg-primary-very-opaque" style="margin-left: -1rem !important; margin-right: -1rem !important;">
+                                <div class="resume-content">
+                                    <div class="resume-content d-flex flex-md-row">
+                                        <span class="mb-0 text-dark flex-grow-1"><b>{{ next_ref.name }}</b></span>
+                                    </div>
+                                    <div class="resume-content d-flex flex-md-row">
+                                        <span class="mb-0 text-dark flex-grow-1"><i>{{ next_ref.title }}</i></span>
+                                    </div>
+                                    <div class="resume-content d-flex flex-md-row">
+                                        <span class="mb-0 text-dark flex-grow-1">{{ next_ref.institute }}</span>
+                                    </div>
+                                    <div class="resume-content d-flex flex-md-row">
+                                        <span class="mb-0 text-dark flex-grow-1">{{ next_ref.loc }}</span>
+                                    </div>
+                                    <div class="resume-content d-flex flex-md-row">
+                                        <a href="mailto:{{ ref.email }}" target="_blank"><span class="mb-0 text-dark flex-grow-1">{{ ref.email }}</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endunless %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </p>
+        </div>
+        <!-- </p> -->
+    </div>
+</section>
